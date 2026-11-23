@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google shows a site's icon in results only at a multiple of 48px, so
+         48 and 96 are listed; favicon.ico is for anything that asks for it by name. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Every reel and poster comes from here (shared/reel-versions.ts); connect while the HTML is still arriving. -->
+    <link rel="preconnect" href="https://media.codeandchill.store" />
+    <!-- Every page waits on the catalogue (CatalogProvider); fetch it beside the JS, not after it. -->
+    <link rel="preload" href="/api/products" as="fetch" crossorigin />
+    <!-- seo — the server swaps this block for a product's own tags (server/src/routes/pages.ts) -->
+    <title>Halsa — A personal health record app, in ink and lime | Code and Chill</title>
+    <meta name="description" content="A complete personal health record app for one person and their care team, in an ink and lime look on white with a light and a dark theme, and it comes with…" />
+    <link rel="canonical" href="https://codeandchill.store/templates/halsa" />
+    <meta property="og:site_name" content="Code and Chill" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Halsa — A personal health record app, in ink and lime" />
+    <meta property="og:description" content="A complete personal health record app for one person and their care team, in an ink and lime look on white with a light and a dark theme, and it comes with…" />
+    <meta property="og:url" content="https://codeandchill.store/templates/halsa" />
+    <meta property="og:image" content="https://codeandchill.store/og/site.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Halsa by Code and Chill" />
+    <meta property="product:price:amount" content="91.00" />
+    <meta property="product:price:currency" content="USD" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","name":"Halsa","description":"A complete personal health record app for one person and their care team, in an ink and lime look on white with a light and a dark theme, and it comes with sample data. Good for: a patient app, a clinic portal, a wellness or fitness tracker, or any app that shows health readings over time. How it works: each day's heart rate, blood oxygen, blood pressure, steps or sleep shows as a bar from the day's low to its high with a dot for the average; switch the measure or the range and the bars reshape, and tap a day to read it; ticking a dose off, logging a reading or a meal, and booking or moving an appointment all update the app straight away, most with Undo. Includes: an overview with four summary tiles, the vitals chart, a live pulse line, today's medicines, a breathing exercise, water, the next appointment, the latest lab results and the week's workouts; vitals pages for heart, oxygen, blood pressure and temperature with every reading; activity with daily rings, workouts and goals; sleep with each night's stages and recovery; nutrition with meals, water and iron; medicines with a day timeline, stock and refills, and four weeks of doses; records with lab results shown against their normal ranges, scans, visits and vaccines; care with appointments you book from free times, the care team and messages; reports with any measure over 30 or 90 days, a CSV download and a printable summary; settings with profile, devices, sharing, notifications, units, and a reset; and help. How to use: run it as it is to explore with the sample data, which is saved in your browser, then connect your own health data and clinic systems in place of the sample data, since there is no backend; Cmd+K searches everything, and it works on every screen from phone to desktop with a bottom tab bar on phones. Built with React, TypeScript and GSAP.","image":["https://codeandchill.store/og/site.jpg","https://media.codeandchill.store/reels/36de76b7/halsa.jpg"],"url":"https://codeandchill.store/templates/halsa","sku":"halsa","category":"Website template","brand":{"@type":"Brand","name":"Code and Chill"},"offers":{"@type":"Offer","url":"https://codeandchill.store/templates/halsa","price":"91.00","priceCurrency":"USD","validFrom":"2026-11-18","priceSpecification":{"@type":"UnitPriceSpecification","priceType":"https://schema.org/StrikethroughPrice","price":"130.00","priceCurrency":"USD"},"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"USD"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":["US","GB","CA","AU","NZ","IE","DE","FR","NL","ES","IT","SE","IN","SG","AE"]},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":0,"maxValue":0,"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":0,"maxValue":0,"unitCode":"DAY"}}},"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":["US","GB","CA","AU","NZ","IE","DE","FR","NL","ES","IT","SE","IN","SG","AE"],"returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Code and Chill","item":"https://codeandchill.store/"},{"@type":"ListItem","position":2,"name":"Templates","item":"https://codeandchill.store/templates"},{"@type":"ListItem","position":3,"name":"Halsa","item":"https://codeandchill.store/templates/halsa"}]},{"@type":"VideoObject","name":"Halsa — demo","description":"A personal health record app, in ink and lime","thumbnailUrl":"https://media.codeandchill.store/reels/36de76b7/halsa.jpg","contentUrl":"https://media.codeandchill.store/reels/a89f6b20/halsa.mp4","uploadDate":"2026-11-18T00:00:00+00:00"}]}</script>
+    <link rel="preload" as="image" href="https://media.codeandchill.store/reels/36de76b7/halsa.jpg" fetchpriority="high" />
+    <meta name="theme-color" content="#f0eee9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171615" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Paint the stored theme before first paint, so the page never flashes.
+      (() => {
+        try {
+          const stored = localStorage.getItem('instrument:theme');
+          const theme =
+            stored ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DjijkV5N.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/useDocumentTitle-Kh3UBx4r.js">
+    <link rel="modulepreload" crossorigin href="/assets/reel-shapes-DX6a0aiE.js">
+    <link rel="modulepreload" crossorigin href="/assets/pricing-D8Bm94Qz.js">
+    <link rel="modulepreload" crossorigin href="/assets/kinds-CHSzJv7Y.js">
+    <link rel="modulepreload" crossorigin href="/assets/catalog-context-B9q5UlQP.js">
+    <link rel="modulepreload" crossorigin href="/assets/format-oxO2bVi2.js">
+    <link rel="modulepreload" crossorigin href="/assets/cart-EA3Sb5ra.js">
+    <link rel="modulepreload" crossorigin href="/assets/cart-context-auWSksXP.js">
+    <link rel="modulepreload" crossorigin href="/assets/api-DyNtFBqj.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CmcW9Ee0.css">
+  </head>
+  <body>
+    <!-- Painted before any script runs; React replaces it. Mirrors src/components/Boot.tsx. -->
+    <div id="root">
+      <div hidden><nav><a href="/">Code and Chill</a> <a href="/components">Components</a> <a href="/templates">Templates</a> <a href="/apps">Apps</a> <a href="/collections">Bundles</a> <a href="/new">New</a> <a href="/faq">FAQ</a> <a href="/license">Licence</a> <a href="/changelog">Changelog</a></nav><main><p><a href="/templates">Templates</a></p><h1>Halsa</h1><p>A personal health record app, in ink and lime</p><p>A complete personal health record app for one person and their care team, in an ink and lime look on white with a light and a dark theme, and it comes with sample data. Good for: a patient app, a clinic portal, a wellness or fitness tracker, or any app that shows health readings over time. How it works: each day's heart rate, blood oxygen, blood pressure, steps or sleep shows as a bar from the day's low to its high with a dot for the average; switch the measure or the range and the bars reshape, and tap a day to read it; ticking a dose off, logging a reading or a meal, and booking or moving an appointment all update the app straight away, most with Undo. Includes: an overview with four summary tiles, the vitals chart, a live pulse line, today's medicines, a breathing exercise, water, the next appointment, the latest lab results and the week's workouts; vitals pages for heart, oxygen, blood pressure and temperature with every reading; activity with daily rings, workouts and goals; sleep with each night's stages and recovery; nutrition with meals, water and iron; medicines with a day timeline, stock and refills, and four weeks of doses; records with lab results shown against their normal ranges, scans, visits and vaccines; care with appointments you book from free times, the care team and messages; reports with any measure over 30 or 90 days, a CSV download and a printable summary; settings with profile, devices, sharing, notifications, units, and a reset; and help. How to use: run it as it is to explore with the sample data, which is saved in your browser, then connect your own health data and clinic systems in place of the sample data, since there is no backend; Cmd+K searches everything, and it works on every screen from phone to desktop with a bottom tab bar on phones. Built with React, TypeScript and GSAP.</p><p>$91.00 — one-time price, free updates</p><ul><li>A React app template</li><li>React and Vite · npm install and it runs</li><li>Build unlimited client sites with it</li></ul><p>Built with React, CSS, GSAP, Vitest.</p><h2>What is in the zip</h2><ul><li>app.css</li><li>css/a11y.css</li><li>css/activity.css</li><li>css/care.css</li><li>css/food.css</li><li>css/help.css</li><li>css/home.css</li><li>css/meds.css</li><li>css/records.css</li><li>css/reports.css</li><li>css/settings.css</li><li>css/sleep.css</li><li>css/vitals.css</li><li>index.html</li><li>src/App.tsx</li><li>src/actions.tsx</li><li>src/auth.ts</li><li>src/env.d.ts</li><li>src/finder.tsx</li><li>src/main.tsx</li><li>src/metrics.ts</li><li>src/motion.ts</li><li>src/pages/activity.tsx</li><li>src/pages/care.tsx</li><li>src/pages/food.tsx</li><li>src/pages/help.tsx</li><li>src/pages/home.tsx</li><li>src/pages/meds.tsx</li><li>src/pages/records.tsx</li><li>src/pages/reports.tsx</li><li>src/pages/settings.tsx</li><li>src/pages/sleep.tsx</li><li>src/pages/types.ts</li><li>src/pages/vitals.tsx</li><li>src/router.ts</li><li>src/store.ts</li><li>src/ui/charts.tsx</li><li>src/ui/format.ts</li><li>src/ui/icons.tsx</li><li>src/ui/kit.tsx</li></ul><h2>Version history</h2><ul><li>v1.0.0, 2026-11-18 — First release. Halsa shipped, with the reel recorded from the real page.</li></ul><h2>Related</h2><ul><li><a href="/templates/mango">Mango</a> — A scroll-animated landing page for a fruit shop</li><li><a href="/templates/nero">Nero</a> — A product picker page where each chocolate bar flips in</li><li><a href="/templates/moonart">Moonart</a> — A space-themed gallery with panels that open on hover</li></ul></main></div>
+      <div class="boot" role="status" aria-label="Loading the store">
+        <p class="boot__brand"><i aria-hidden="true"></i>CODE AND CHILL</p>
+        <div class="boot__grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+/* Sleep Page & Hypnogram */
+.hypnogram-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.hypnogram-row {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  gap: 0.75rem;
+}
+
+.hypnogram-label {
+  width: 60px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.hypnogram-track {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  gap: 3px;
+  background: var(--bg-subtle);
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.stage-block {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.stage-deep { background: #3b82f6; }
+.stage-light { background: #60a5fa; }
+.stage-rem { background: #8b5cf6; }
+.stage-awake { background: #f59e0b; }

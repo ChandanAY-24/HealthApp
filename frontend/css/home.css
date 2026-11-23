@@ -1,0 +1,1029 @@
+/* ==========================================================================
+   Halsa Home / Overview Stylesheet
+   Authentic 12-column grid, tile--lime, and card components
+   ========================================================================== */
+
+/* Page Header & Summary */
+.home__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.home__greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.home__greeting h1 {
+  font-size: var(--fs-4xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.home__greeting p {
+  color: var(--muted);
+  font-size: var(--fs-md);
+  font-weight: 500;
+}
+
+.home__greeting p b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.home__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   4 KPI Tiles Bar (Top of Overview)
+   ========================================================================== */
+.tiles {
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: grid;
+}
+
+.tile {
+  border-radius: var(--r-lg);
+  background: var(--card-alt);
+  min-width: 0;
+  min-height: 150px;
+  color: var(--ink);
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 18px 16px;
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.tile:hover {
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  transform: translateY(-1px);
+}
+
+/* Authentic Lime Tile Highlight */
+.tile--lime {
+  background: var(--lime);
+  color: var(--on-lime);
+}
+
+.tile__label {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  display: flex;
+}
+
+.tile--lime .tile__label {
+  color: var(--on-lime);
+}
+
+.tile__label svg {
+  background: var(--frame);
+  width: 30px;
+  height: 30px;
+  color: var(--ink);
+  border-radius: 50%;
+  padding: 7px;
+  flex: none;
+}
+
+.tile--lime .tile__label svg {
+  background: var(--deep);
+  color: var(--lime);
+}
+
+.tile__value {
+  font-size: var(--fs-display);
+  letter-spacing: -0.025em;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+}
+
+.tile__value small {
+  font-size: var(--fs-md);
+  letter-spacing: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tile--lime .tile__value small {
+  color: var(--on-lime);
+  opacity: 0.75;
+}
+
+.tile__foot {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin-top: auto;
+  font-weight: 600;
+  display: flex;
+}
+
+.tile__foot > span:not(.delta) {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.tile--lime .tile__foot {
+  color: var(--on-lime);
+}
+
+.tile--lime .delta--up,
+.tile--lime .delta--down {
+  background: var(--deep);
+  color: var(--lime);
+  border: none;
+}
+
+.tile__foot .spark {
+  width: 80px;
+  height: 28px;
+  color: var(--ink);
+  flex: none;
+  margin-left: auto;
+}
+
+.tile--lime .spark {
+  color: var(--on-lime);
+}
+
+/* Progress Bar in Tile Foot */
+.tbar {
+  background: var(--frame);
+  border-radius: 99px;
+  flex: 1;
+  height: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tbar i {
+  border-radius: inherit;
+  background: var(--ink);
+  transform-origin: 0;
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Sleep Stage Stack in Tile Foot */
+.stack {
+  flex: 1;
+  gap: 3px;
+  height: 10px;
+  display: flex;
+}
+
+.stack i {
+  border-radius: 99px;
+  display: block;
+}
+
+.stack .s0 { background: var(--ink); }
+.stack .s1 { background: var(--line-2); }
+.stack .s2 { background: var(--lime); box-shadow: inset 0 0 0 1.5px rgba(45, 46, 51, 0.45); }
+.stack .s3 { background: var(--frame); box-shadow: inset 0 0 0 1.5px var(--line-2); }
+
+/* Dark Mode Overrides for Tiles */
+[data-theme="dark"] .tile--lime {
+  background: var(--card-alt);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(214, 255, 101, 0.35);
+}
+
+[data-theme="dark"] .tile--lime .tile__label,
+[data-theme="dark"] .tile--lime .tile__foot {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .tile--lime .tile__value {
+  color: var(--lime);
+}
+
+[data-theme="dark"] .tile--lime .tile__value small {
+  color: var(--muted);
+}
+
+[data-theme="dark"] .tile--lime .tile__label svg {
+  background: var(--lime);
+  color: var(--on-lime);
+}
+
+[data-theme="dark"] .tile--lime .spark {
+  color: var(--lime);
+}
+
+[data-theme="dark"] .tile__label svg {
+  background: var(--pill-bg);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .stack .s0 {
+  background: #f1f2f4;
+}
+
+[data-theme="dark"] .tbar i {
+  background: var(--lime);
+}
+
+[data-theme="dark"] .tbar {
+  background: var(--pill-bg);
+}
+
+/* ==========================================================================
+   Home 12-Column Grid Layout
+   Row 1: Hero Card (8) + Live Pulse (4)
+   Row 2: Today's Medicines (4) + Breathe (4) + Home Stack [Water + Next Appt] (4)
+   Row 3: Latest Results (7) + This Week Workouts (5)
+   ========================================================================== */
+.home__grid {
+  gap: var(--gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+  display: grid;
+}
+
+.hero-card {
+  grid-column: span 8;
+}
+
+.pulse {
+  grid-column: span 4;
+}
+
+.doses {
+  grid-column: span 4;
+}
+
+.breathe {
+  grid-column: span 4;
+}
+
+.home__stack {
+  gap: var(--gap);
+  grid-column: span 4;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  display: grid;
+}
+
+.results {
+  grid-column: span 7;
+}
+
+.week {
+  grid-column: span 5;
+}
+
+/* ==========================================================================
+   Hero Card (Vitals Range Chart & Metric Tabs)
+   ========================================================================== */
+.hero-card__sum {
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 28px;
+  margin: -4px 0 12px;
+  display: flex;
+}
+
+.hero-card__sum small {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  font-weight: 600;
+  display: block;
+}
+
+.hero-card__sum b {
+  font-size: var(--fs-4xl);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.hero-card__sum em {
+  font-style: normal;
+  font-size: var(--fs-md);
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+
+.hero-card__delta {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-left: auto;
+  display: flex;
+}
+
+.mtabs {
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  display: flex;
+}
+
+.mtabs button {
+  height: 34px;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  background: var(--frame);
+  border-radius: 10px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 13px;
+  font-weight: 600;
+  display: inline-flex;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mtabs button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.mtabs button:hover {
+  background: var(--card-alt);
+}
+
+.mtabs button[aria-pressed="true"] {
+  background: var(--lime);
+  color: var(--on-lime);
+  box-shadow: none;
+}
+
+.mtabs__more {
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-weight: 600;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.mtabs__more svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mtabs__more:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   Live Pulse Monitor Card (Deep Ink Background)
+   ========================================================================== */
+.pulse {
+  background: var(--deep);
+  color: #fff;
+  box-shadow: none;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
+
+.pulse .chead p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.pulse__live {
+  background: rgba(214, 255, 101, 0.14);
+  border-radius: 50%;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  display: grid;
+}
+
+.pulse__live i {
+  background: var(--lime);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: 1.6s ease-in-out infinite pulse-breathe;
+  display: block;
+}
+
+@keyframes pulse-breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.65); }
+}
+
+.pulse__fig {
+  align-items: flex-end;
+  gap: 8px;
+  display: flex;
+  margin-top: 4px;
+}
+
+.pulse__fig b {
+  letter-spacing: -0.04em;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 0.9;
+  display: inline-block;
+}
+
+.pulse__fig span {
+  color: var(--lime);
+  padding-bottom: 6px;
+  font-weight: 600;
+  display: grid;
+}
+
+.pulse__fig small {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--fs-xs);
+}
+
+.pulse__trace {
+  --lime: #d6ff65;
+  flex: 1;
+  width: 100%;
+  min-height: 90px;
+  margin: 10px 0 12px;
+  display: block;
+}
+
+.pulse__stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: auto;
+  display: grid;
+}
+
+.pulse__stats > div {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.pulse__stats small {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  display: block;
+}
+
+.pulse__stats b {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+
+.pulse__stats em {
+  font-style: normal;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 2px;
+}
+
+[data-theme="dark"] .pulse {
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* ==========================================================================
+   Today's Medicines Card
+   ========================================================================== */
+.doses__track {
+  gap: 4px;
+  margin: -4px 0 12px;
+  display: flex;
+}
+
+.doses__track i {
+  background: var(--card-alt);
+  height: 6px;
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  border-radius: 99px;
+  flex: 1;
+}
+
+.doses__track i.is-taken {
+  background: var(--lime);
+  box-shadow: inset 0 0 0 1.5px rgba(45, 46, 51, 0.45);
+}
+
+.doses__track i.is-skipped {
+  background: var(--ink-2);
+  box-shadow: none;
+}
+
+.doses__list {
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.dose {
+  background: var(--frame);
+  box-shadow: inset 0 0 0 1px var(--line);
+  border-radius: 16px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 8px 8px;
+  display: flex;
+}
+
+[data-theme="dark"] .dose {
+  background: var(--card-alt);
+  box-shadow: none;
+}
+
+.dose__check {
+  width: 36px;
+  height: 36px;
+  box-shadow: inset 0 0 0 1.5px var(--line-2);
+  color: transparent;
+  border-radius: 50%;
+  flex: none;
+  place-items: center;
+  display: grid;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: none;
+  border: none;
+}
+
+.dose__check svg {
+  stroke-width: 2.4px;
+  width: 18px;
+  height: 18px;
+}
+
+.dose__check:not(:disabled):hover {
+  color: var(--muted);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+
+.dose.is-taken .dose__check {
+  background: var(--lime);
+  color: var(--on-lime);
+  box-shadow: none;
+  cursor: default;
+}
+
+.dose.is-skipped .dose__check {
+  background: var(--card-alt);
+  color: var(--muted);
+  cursor: default;
+}
+
+.dose__text {
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dose__text b {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  overflow: hidden;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+}
+
+.dose__text b span {
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.dose__text small {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+  margin-top: 2px;
+}
+
+.dose.is-taken .dose__text b {
+  text-decoration: line-through;
+  text-decoration-color: var(--line-2);
+}
+
+.dose__at {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Take a Minute (Box Breathing Card)
+   ========================================================================== */
+.breathe {
+  flex-direction: column;
+  display: flex;
+}
+
+.breathe__stage {
+  flex: 1;
+  place-items: center;
+  min-height: 220px;
+  margin: 4px 0 14px;
+  display: grid;
+  position: relative;
+}
+
+.breathe__halo {
+  width: 176px;
+  height: 176px;
+  box-shadow: inset 0 0 0 1px var(--line-2), 0 0 0 18px var(--frame), 0 0 0 19px var(--line);
+  border-radius: 50%;
+  position: absolute;
+}
+
+[data-theme="dark"] .breathe__halo {
+  box-shadow: inset 0 0 0 1px var(--line-2), 0 0 0 18px var(--card-alt), 0 0 0 19px var(--line);
+}
+
+.breathe__ring {
+  background: var(--lime);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.breathe__text {
+  text-align: center;
+  color: var(--on-lime);
+  justify-items: center;
+  display: grid;
+  position: relative;
+  z-index: 2;
+}
+
+.breathe__text b {
+  font-size: var(--fs-lg);
+  max-width: 9ch;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.breathe__text small {
+  opacity: 0.7;
+  font-weight: 600;
+  font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   Hydration Water Tracker
+   ========================================================================== */
+.glasses {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px;
+  display: grid;
+  margin-top: 8px;
+}
+
+.glass {
+  background: var(--card-alt);
+  height: 46px;
+  box-shadow: inset 0 0 0 1.5px var(--line-2);
+  border-radius: 6px 6px 12px 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.glass i {
+  background: var(--lime);
+  transform-origin: 50% 100%;
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-out;
+  display: block;
+}
+
+.glass.is-full i {
+  transform: scaleY(1);
+}
+
+.glass.is-full {
+  box-shadow: inset 0 0 0 1.5px rgba(45, 46, 51, 0.45);
+}
+
+.glass:hover {
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+
+/* ==========================================================================
+   Next Appointment Card
+   ========================================================================== */
+.next__row {
+  background: var(--card-alt);
+  text-align: left;
+  border-radius: 16px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+  border: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.next__row:hover {
+  box-shadow: inset 0 0 0 1px var(--line-2);
+}
+
+.next__date {
+  background: var(--deep);
+  color: #fff;
+  border-radius: 14px;
+  flex: none;
+  align-content: center;
+  place-items: center;
+  width: 52px;
+  height: 56px;
+  display: grid;
+  text-align: center;
+}
+
+.next__date small {
+  font-size: var(--fs-2xs);
+  color: var(--lime);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.next__date b {
+  font-size: var(--fs-3xl);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.next__row .cell__text b {
+  white-space: normal;
+}
+
+.next__foot {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-weight: 600;
+  display: flex;
+}
+
+.next__foot > span:not(.av) {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .next__date {
+  background: var(--lime);
+  color: var(--on-lime);
+}
+
+[data-theme="dark"] .next__date small {
+  color: var(--on-lime);
+}
+
+/* ==========================================================================
+   Latest Results Card
+   ========================================================================== */
+.reslist {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  display: grid;
+}
+
+.res {
+  border-radius: 16px;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px 12px;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.res:hover {
+  background: var(--card-alt);
+}
+
+.res__ico {
+  background: var(--card-alt);
+  border-radius: 12px;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  display: grid;
+}
+
+.res.is-new .res__ico {
+  background: var(--lime);
+  color: var(--on-lime);
+}
+
+.res__ico svg {
+  width: 19px;
+  height: 19px;
+}
+
+.res__meta {
+  justify-items: end;
+  gap: 4px;
+  display: grid;
+}
+
+.res__meta small {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   This Week Workouts Card
+   ========================================================================== */
+.week__body {
+  gap: 14px;
+  display: grid;
+}
+
+.week__list {
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.week__list a {
+  border-radius: 12px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.week__list a:hover {
+  background: var(--card-alt);
+}
+
+.week__list .cell__text {
+  flex: 1;
+}
+
+.week__ico {
+  background: var(--card-alt);
+  border-radius: 50%;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  display: grid;
+}
+
+.week__ico svg {
+  width: 17px;
+  height: 17px;
+}
+
+.week__n {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.week__n small {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-card,
+  .results {
+    grid-column: span 12;
+  }
+  .pulse,
+  .doses,
+  .breathe,
+  .home__stack,
+  .week {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 999px) {
+  .week {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 760px) {
+  .tiles {
+    gap: 10px;
+  }
+  .tile {
+    min-height: 128px;
+    padding: 14px;
+  }
+  .tile__value {
+    font-size: var(--fs-4xl);
+  }
+  .tile__foot .spark,
+  .tile__foot > span:not(.delta):not(.tbar):not(.stack) {
+    display: none;
+  }
+  .tile__foot--bar > span:last-child {
+    display: inline !important;
+  }
+  .pulse,
+  .doses,
+  .breathe,
+  .home__stack {
+    grid-column: span 12;
+  }
+  .hero-card__delta {
+    align-items: flex-start;
+    margin-left: 0;
+  }
+  .mtabs {
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    margin-right: -16px;
+    padding-right: 16px;
+    overflow-x: auto;
+  }
+  .mtabs button {
+    flex: none;
+  }
+  .res__meta small {
+    display: none;
+  }
+  .res {
+    padding: 8px 4px;
+  }
+}

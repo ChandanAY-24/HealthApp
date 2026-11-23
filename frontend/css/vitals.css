@@ -1,0 +1,172 @@
+/* Vitals Page & Dynamic Range Charts */
+.vitals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.vitals-subnav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.subnav-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--ink-600);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.subnav-btn:hover {
+  border-color: var(--ink-400);
+  color: var(--ink-900);
+}
+
+.subnav-btn.active {
+  background: var(--ink-900);
+  color: #ffffff;
+  border-color: var(--ink-900);
+}
+
+[data-theme='dark'] .subnav-btn.active {
+  background: var(--lime-500);
+  color: #020617;
+  border-color: var(--lime-500);
+}
+
+/* Main Range Chart Card */
+.chart-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-metric-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink-950);
+}
+
+.chart-summary-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.chart-stat-number {
+  font-size: 2.5rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink-950);
+}
+
+.chart-stat-range {
+  font-size: 0.875rem;
+  color: var(--ink-500);
+  font-weight: 500;
+}
+
+/* High-Low Bar Chart SVG styling */
+.chart-stage {
+  width: 100%;
+  height: 260px;
+  position: relative;
+}
+
+.range-bar-column {
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.range-bar-column:hover {
+  opacity: 0.85;
+}
+
+.range-bar-bg {
+  fill: var(--bg-subtle);
+}
+
+.range-bar-capsule {
+  fill: var(--ink-900);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] .range-bar-capsule {
+  fill: var(--lime-500);
+}
+
+.range-dot-average {
+  fill: #ffffff;
+  stroke: var(--lime-500);
+  stroke-width: 3px;
+}
+
+.chart-active-tooltip {
+  position: absolute;
+  background: var(--ink-950);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  pointer-events: none;
+  box-shadow: var(--shadow-lg);
+  z-index: 20;
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+}
+
+/* Vitals History Log */
+.vitals-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.vitals-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--ink-500);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.vitals-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--ink-800);
+}
+
+.vitals-table tr:hover td {
+  background-color: var(--bg-subtle);
+}
